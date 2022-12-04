@@ -6,14 +6,15 @@ var elvesCalorieCountList = new List<long>();
 
 long elfCalorieCount = 0;
 foreach (var calorieEntry in calorieEntries)
-{
-    if (calorieEntry != "") elfCalorieCount += long.Parse(calorieEntry);
+    if (calorieEntry != "")
+    {
+        elfCalorieCount += long.Parse(calorieEntry);
+    }
     else
     {
         elvesCalorieCountList.Add(elfCalorieCount);
         elfCalorieCount = 0;
     }
-}
 
 var elvesCalorieCountListSorted = elvesCalorieCountList.OrderByDescending(x => x).ToList();
 var top3Calories = elvesCalorieCountListSorted.Take(3).ToList();
